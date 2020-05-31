@@ -1708,6 +1708,10 @@ input, select, textarea {
 			display:flex;
 			justify-content: space-between;
 		}
+		
+		#contact .socials {
+			margin-bottom: 10px;
+		}
 
 		@media screen and (max-width: 480px) {
 
