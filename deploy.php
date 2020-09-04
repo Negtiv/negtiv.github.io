@@ -25,7 +25,7 @@ set('writable_dirs', []);
 host('quintenbuis.nl')
     ->user('root')
     ->port(22)
-    ->set('deploy_path', '~/{{application}}');    
+    ->set('deploy_path', '/home/negtiv/{{application}}');    
     
 
 // Tasks
