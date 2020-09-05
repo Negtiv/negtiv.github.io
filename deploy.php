@@ -26,15 +26,15 @@ set('default_stage', 'staging');
 
 host('quintenbuis.nl')
     ->stage('production')
-    ->user('root')
+    ->user('deployer')
     ->port(22)
     ->forwardAgent()
     ->set('deploy_path', '/home/negtiv/{{application}}');
     
 host('quintenbuis.nl')
-    ->set('branch', 'develop')
+    ->set('branch', 'develop');
     ->stage('staging')
-    ->user('root')
+    ->user('deployer')
     ->port(22)
     ->forwardAgent()
     ->set('deploy_path', '/home/negtiv/staging_{{application}}');  
