@@ -32,7 +32,7 @@ host('quintenbuis.nl')
     ->set('deploy_path', '/home/negtiv/{{application}}');
     
 host('quintenbuis.nl')
-    ->set('branch', 'develop');
+    ->set('branch', 'develop')
     ->stage('staging')
     ->user('deployer')
     ->port(22)
