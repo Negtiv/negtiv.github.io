@@ -19,18 +19,30 @@ set('shared_dirs', []);
 // Writable dirs by web server 
 set('writable_dirs', []);
 
+set('default_stage', 'staging');
+
 
 // Hosts
 
 host('quintenbuis.nl')
+    ->stage('production')
     ->user('root')
     ->port(22)
-    ->set('deploy_path', '/home/negtiv/{{application}}');    
+    ->forwardAgent()
+    ->set('deploy_path', '/home/negtiv/{{application}}');
+    
+host('quintenbuis.nl')
+    ->set('branch', 'develop')
+    ->stage('staging')
+    ->user('root')
+    ->port(22)
+    ->forwardAgent()
+    ->set('deploy_path', '/home/negtiv/staging_{{application}}');  
     
 
 // Tasks
 
-desc('Deploy your project');
+desc('Deploy to server');
 task('deploy', [
     'deploy:info',
     'deploy:prepare',
